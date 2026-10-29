@@ -3,14 +3,14 @@
 
 try {
     if (!app.documents.length) {
-        alert("Откройте документ перед выполнением сценария!");
-        throw new Error("Нет открытого документа.");
+        alert("РћС‚РєСЂРѕР№С‚Рµ РґРѕРєСѓРјРµРЅС‚ РїРµСЂРµРґ РІС‹РїРѕР»РЅРµРЅРёРµРј СЃС†РµРЅР°СЂРёСЏ!");
+        throw new Error("РќРµС‚ РѕС‚РєСЂС‹С‚РѕРіРѕ РґРѕРєСѓРјРµРЅС‚Р°.");
     }
 
     var doc = app.activeDocument;
-    alert("Документ открыт!");
+    alert("Р”РѕРєСѓРјРµРЅС‚ РѕС‚РєСЂС‹С‚!");
 
-    // Создание корректирующего слоя "Кривые"
+    // РЎРѕР·РґР°РЅРёРµ РєРѕСЂСЂРµРєС‚РёСЂСѓСЋС‰РµРіРѕ СЃР»РѕСЏ "РљСЂРёРІС‹Рµ"
     var idCurves = stringIDToTypeID("make");
     var descCurves = new ActionDescriptor();
     var refCurves = new ActionReference();
@@ -22,9 +22,9 @@ try {
     descCurves.putObject(stringIDToTypeID("using"), stringIDToTypeID("curvesAdjustment"), descCurvesAdjustment);
 
     executeAction(idCurves, descCurves, DialogModes.NO);
-    alert("Корректирующий слой 'Кривые' создан!");
+    alert("РљРѕСЂСЂРµРєС‚РёСЂСѓСЋС‰РёР№ СЃР»РѕР№ 'РљСЂРёРІС‹Рµ' СЃРѕР·РґР°РЅ!");
 
-    // Создание корректирующего слоя "Фотофильтр"
+    // РЎРѕР·РґР°РЅРёРµ РєРѕСЂСЂРµРєС‚РёСЂСѓСЋС‰РµРіРѕ СЃР»РѕСЏ "Р¤РѕС‚РѕС„РёР»СЊС‚СЂ"
     var idPhotoFilter = stringIDToTypeID("make");
     var descPhotoFilter = new ActionDescriptor();
     var refPhotoFilter = new ActionReference();
@@ -36,9 +36,9 @@ try {
     descPhotoFilterAdjustment.putEnumerated(stringIDToTypeID("filter"), stringIDToTypeID("filter"), stringIDToTypeID("warmingFilter85"));
     descPhotoFilter.putObject(stringIDToTypeID("using"), stringIDToTypeID("photoFilter"), descPhotoFilterAdjustment);
     executeAction(idPhotoFilter, descPhotoFilter, DialogModes.NO);
-    alert("Корректирующий слой 'Фотофильтр' создан!");
+    alert("РљРѕСЂСЂРµРєС‚РёСЂСѓСЋС‰РёР№ СЃР»РѕР№ 'Р¤РѕС‚РѕС„РёР»СЊС‚СЂ' СЃРѕР·РґР°РЅ!");
 
-    // Создание корректирующего слоя "Цветовой баланс"
+    // РЎРѕР·РґР°РЅРёРµ РєРѕСЂСЂРµРєС‚РёСЂСѓСЋС‰РµРіРѕ СЃР»РѕСЏ "Р¦РІРµС‚РѕРІРѕР№ Р±Р°Р»Р°РЅСЃ"
     var idColorBalance = stringIDToTypeID("make");
     var descColorBalance = new ActionDescriptor();
     var refColorBalance = new ActionReference();
@@ -52,8 +52,8 @@ try {
     descColorBalanceAdjustment.putIntegers(stringIDToTypeID("highlights"), [10, 0, -10]);
     descColorBalance.putObject(stringIDToTypeID("using"), stringIDToTypeID("colorBalance"), descColorBalanceAdjustment);
     executeAction(idColorBalance, descColorBalance, DialogModes.NO);
-    alert("Корректирующий слой 'Цветовой баланс' создан!");
+    alert("РљРѕСЂСЂРµРєС‚РёСЂСѓСЋС‰РёР№ СЃР»РѕР№ 'Р¦РІРµС‚РѕРІРѕР№ Р±Р°Р»Р°РЅСЃ' СЃРѕР·РґР°РЅ!");
 
 } catch (e) {
-    alert("Ошибка: " + e.message + "\nLine: " + e.line);
+    alert("РћС€РёР±РєР°: " + e.message + "\nLine: " + e.line);
 }

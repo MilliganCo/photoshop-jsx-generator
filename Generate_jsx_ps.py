@@ -60,7 +60,7 @@ try {
 """
 
 # Сохранение файла
-with open('her_style_color_correction.jsx', 'w') as f:
+with open('her_style_color_correction.jsx', 'w', encoding='utf-8', newline='\n') as f:
     f.write(jsx_content)
 
 print("JSX файл 'her_style_color_correction.jsx' успешно создан.")
